@@ -3,6 +3,7 @@ from abc import abstractmethod, abstractproperty
 import collections
 import contextlib
 import functools
+import inspect
 import re as stdlib_re  # Avoid confusion with the re we export.
 import sys
 import types
@@ -2221,6 +2222,7 @@ def NewType(name, tp):
 
     new_type.__name__ = name
     new_type.__supertype__ = tp
+    new_type.__module__ = inspect.stack()[1][0].f_globals['__name__']
     return new_type
 
 

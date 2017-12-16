@@ -2335,6 +2335,12 @@ class NewTypeTests(BaseTestCase):
             class D(UserName):
                 pass
 
+    def test_introspection(self):
+        UserId = NewType('UserId', int)
+        self.assertEqual(UserId.__name__, 'UserId')
+        self.assertEqual(UserId.__supertype__, int)
+        self.assertEqual(UserId.__module__, 'test_typing')
+
 
 class NamedTupleTests(BaseTestCase):
 
