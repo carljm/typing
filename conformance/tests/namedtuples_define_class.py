@@ -117,10 +117,11 @@ class Property(NamedTuple, Generic[T]):
     value: T
 
 
-pr1 = Property("", 3.4)
-assert_type(pr1, Property[float])
-assert_type(pr1[1], float)
-assert_type(pr1.value, float)
+def _(x: int):
+    pr1 = Property("", x)
+    assert_type(pr1, Property[int])
+    assert_type(pr1[1], int)
+    assert_type(pr1.value, int)
 
 Property[str]("", 3.1)  # E
 
