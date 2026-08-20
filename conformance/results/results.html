@@ -360,24 +360,40 @@
                     </tr>
                     <tr>
                         <th scope="row">annotations_typeexpr</th>
-                        <td class="conformant">Pass</td>
+                        <td class="partially-conformant tooltip">
+                            Partial
+                            <ul class="notes">
+                                <li>Does not reject subscripting a non-generic class with <code>__class_getitem__</code> in a <code>type</code> statement.</li>
+                            </ul>
+                        </td>
                         <td class="partially-conformant tooltip">
                             Partial
                             <ul class="notes">
                                 <li>Fails to reject various weird annotations</li>
+                                <li>Does not reject subscripting a non-generic class with <code>__class_getitem__</code> in type expressions.</li>
                             </ul>
                         </td>
-                        <td class="conformant">Pass</td>
-                        <td class="conformant">Pass</td>
+                        <td class="partially-conformant tooltip">
+                            Partial
+                            <ul class="notes">
+                                <li>Does not reject subscripting a non-generic class with <code>__class_getitem__</code> in type expressions.</li>
+                            </ul>
+                        </td>
+                        <td class="partially-conformant tooltip">
+                            Partial
+                            <ul class="notes">
+                                <li>Does not reject subscripting a non-generic class with <code>__class_getitem__</code> in type expressions.</li>
+                            </ul>
+                        </td>
                         <td class="conformant">Pass</td>
                         <td class="conformant">Pass</td>
                     </tr>
                     <tr class="summary">
                         <td></td>
+                        <td>3.5 / 5 • 70.0%</td>
                         <td>4 / 5 • 80.0%</td>
                         <td>4 / 5 • 80.0%</td>
                         <td>4.5 / 5 • 90.0%</td>
-                        <td>5 / 5 • 100.0%</td>
                         <td>4.5 / 5 • 90.0%</td>
                         <td>4.5 / 5 • 90.0%</td>
                     </tr>
@@ -2731,10 +2747,10 @@
                 <tfoot>
                     <tr>
                         <td></td>
-                        <td>108.5 / 145 • 74.8%</td>
+                        <td>108 / 145 • 74.5%</td>
                         <td>127.5 / 145 • 87.9%</td>
-                        <td>140.5 / 145 • 96.9%</td>
-                        <td>135.5 / 145 • 93.4%</td>
+                        <td>140 / 145 • 96.6%</td>
+                        <td>135 / 145 • 93.1%</td>
                         <td>128 / 145 • 88.3%</td>
                         <td>140 / 145 • 96.6%</td>
                     </tr>

@@ -17,4 +17,7 @@ annotations_typeexpr.py:99:10: error[invalid-type-form] Unary operations are not
 annotations_typeexpr.py:100:10: error[invalid-type-form] Boolean operations are not allowed in parameter annotations
 annotations_typeexpr.py:101:10: error[invalid-type-form] F-strings are not allowed in parameter annotations
 annotations_typeexpr.py:102:10: error[invalid-type-form] Module `types` is not valid in a parameter annotation
+annotations_typeexpr.py:129:22: error[not-subscriptable] Cannot subscript non-generic type `<class 'NonGeneric'>`
+annotations_typeexpr.py:130:35: error[not-subscriptable] Cannot subscript non-generic type `<class 'NonGeneric'>`
+annotations_typeexpr.py:131:30: error[not-subscriptable] Cannot subscript non-generic type `<class 'NonGeneric'>`
 """

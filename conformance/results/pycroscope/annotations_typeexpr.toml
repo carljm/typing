@@ -1,6 +1,7 @@
 conformant = "Partial"
 notes = """
 Fails to reject various weird annotations
+Does not reject subscripting a non-generic class with `__class_getitem__` in type expressions.
 """
 conformance_automated = "Fail"
 errors_diff = """
@@ -10,6 +11,9 @@ Line 94: Expected 1 errors
 Line 95: Expected 1 errors
 Line 100: Expected 1 errors
 Line 101: Expected 1 errors
+Line 129: Expected 1 errors
+Line 130: Expected 1 errors
+Line 131: Expected 1 errors
 """
 output = """
 ./annotations_typeexpr.py:89:8: Invalid type annotation [<class 'int'>, <class 'str'>] [invalid_annotation]

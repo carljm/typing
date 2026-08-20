@@ -1,6 +1,12 @@
-conformant = "Pass"
-conformance_automated = "Pass"
+conformant = "Partial"
+notes = """
+Does not reject subscripting a non-generic class with `__class_getitem__` in type expressions.
+"""
+conformance_automated = "Fail"
 errors_diff = """
+Line 129: Expected 1 errors
+Line 130: Expected 1 errors
+Line 131: Expected 1 errors
 """
 output = """
 ERROR annotations_typeexpr.py:88:9-49: Function call cannot be used in annotations [invalid-annotation]

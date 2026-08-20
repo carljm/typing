@@ -1,4 +1,7 @@
-conformant = "Pass"
+conformant = "Partial"
+notes = """
+Does not reject subscripting a non-generic class with `__class_getitem__` in a `type` statement.
+"""
 output = """
 annotations_typeexpr.py:88: error: Invalid type comment or annotation  [valid-type]
 annotations_typeexpr.py:88: note: Suggestion: use eval[...] instead of eval(...)
@@ -19,7 +22,10 @@ annotations_typeexpr.py:100: error: Invalid type comment or annotation  [valid-t
 annotations_typeexpr.py:101: error: Invalid type comment or annotation  [valid-type]
 annotations_typeexpr.py:102: error: Module "types" is not valid as a type  [valid-type]
 annotations_typeexpr.py:102: note: Perhaps you meant to use a protocol matching the module structure?
+annotations_typeexpr.py:129: error: "NonGeneric" expects no type arguments, but 1 given  [type-arg]
+annotations_typeexpr.py:130: error: "NonGeneric" expects no type arguments, but 1 given  [type-arg]
 """
-conformance_automated = "Pass"
+conformance_automated = "Fail"
 errors_diff = """
+Line 131: Expected 1 errors
 """

@@ -6,7 +6,7 @@ import abc
 import abc
 import types
 import types
-from typing import Any, Callable, Tuple, Union, assert_type
+from typing import Any, Callable, Tuple, TypeAlias, Union, assert_type
 
 # https://typing.readthedocs.io/en/latest/spec/annotations.html#valid-type-expression-forms
 
@@ -112,3 +112,20 @@ def takes_None(x: None) -> None:
 
 
 assert_type(takes_None(None), None)
+
+
+# Specification: https://typing.python.org/en/latest/spec/generics.html#user-defined-generic-types
+# Defining __class_getitem__ does not make a class generic, even if the
+# method returns a type and its argument is a valid type expression.
+
+
+class NonGeneric:
+    @classmethod
+    def __class_getitem__(cls, item: object) -> type[int]:
+        return int
+
+
+valid_non_generic: NonGeneric
+invalid_non_generic: NonGeneric[int]  # E: class is not generic
+BadSubscriptionAlias: TypeAlias = NonGeneric[list[int]]  # E: class is not generic
+type BadSubscriptionAlias2 = NonGeneric[int]  # E: class is not generic

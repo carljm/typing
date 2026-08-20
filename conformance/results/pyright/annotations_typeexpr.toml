@@ -1,4 +1,7 @@
-conformant = "Pass"
+conformant = "Partial"
+notes = """
+Does not reject subscripting a non-generic class with `__class_getitem__` in type expressions.
+"""
 output = """
 annotations_typeexpr.py:88:9 - error: Call expression not allowed in type expression (reportInvalidTypeForm)
 annotations_typeexpr.py:89:9 - error: List expression not allowed in type expression
@@ -26,6 +29,9 @@ annotations_typeexpr.py:100:10 - error: Binary operator not allowed in type expr
 annotations_typeexpr.py:101:10 - error: Type expressions cannot use format string literals (f-strings) (reportGeneralTypeIssues)
 annotations_typeexpr.py:102:10 - error: Module cannot be used as a type (reportGeneralTypeIssues)
 """
-conformance_automated = "Pass"
+conformance_automated = "Fail"
 errors_diff = """
+Line 129: Expected 1 errors
+Line 130: Expected 1 errors
+Line 131: Expected 1 errors
 """
